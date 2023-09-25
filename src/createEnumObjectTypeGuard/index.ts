@@ -1,0 +1,1 @@
+export { createEnumObjectTypeGuard } from './createEnumObjectTypeGuard';

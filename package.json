@@ -1,0 +1,54 @@
+{
+  "name": "@aak.lear/enum-objects",
+  "version": "1.0.0-beta.1",
+  "description": "This package provides utilities and types for using const objects as enums in JavaScript and TypeScript",
+  "files": [
+    "build/**",
+    "package.json",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./build/types/index.d.ts",
+      "import": "./build/esm/index.js",
+      "default": "./build/esm/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun run build:clean && bun run build:d.ts && bun run build:esm",
+    "build:esm": "bun build ./src/index.ts --outdir ./build/esm --format esm",
+    "build:d.ts": "tsc -b ./tsconfig.types.json",
+    "build:clean": "rm -rf build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aak-lear/enum-objects.git"
+  },
+  "keywords": [
+    "const-object",
+    "enum",
+    "javascript",
+    "typescript"
+  ],
+  "author": "https://github.com/aak-lear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aak-lear/enum-objects/issues"
+  },
+  "homepage": "https://github.com/aak-lear/enum-objects#readme",
+  "devDependencies": {
+    "@aak.lear/eslint-config-base": "^1.0.0-beta.1",
+    "@aak.lear/eslint-config-typescript": "^1.0.0-beta.4",
+    "@types/jest": "^29.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "bun-types": "latest",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}
